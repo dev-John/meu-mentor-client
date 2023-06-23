@@ -11,7 +11,7 @@ const NavBarContainer = ({ children, ...props }: any) => {
       w="100%"
       mb={8}
       p={8}
-      bg={["primary.500", "primary.500", "transparent", "transparent"]}
+      bg={["primary.300", "primary.300", "transparent", "transparent"]}
       color={["white", "white", "primary.700", "primary.700"]}
       {...props}
     >
