@@ -1,11 +1,12 @@
-import React from "react";
 import { useMentors } from "../../services/Mentors/useMentors";
 
 const MentorBoard = () => {
   const { data } = useMentors();
 
   return (
-    <>Mentor Board! Existem {data?.length} Mentores cadastrados no momento</>
+    <>
+      Mentor Board! Existem {data?.length || 0} Mentores cadastrados no momento
+    </>
   );
 };
 
