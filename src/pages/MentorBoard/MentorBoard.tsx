@@ -1,11 +1,14 @@
-import { useMentors } from "../../services/Mentors/useMentors";
+import MentorFilter from "../../components/MentorFilter/MentorFilter";
+import MentorPanel from "../../components/MentorPanel/MentorPanel";
 
 const MentorBoard = () => {
-  const { data } = useMentors();
+  // const { data } = useMentors();
 
   return (
     <>
-      Mentor Board! Existem {data?.length || 0} Mentores cadastrados no momento
+      <MentorFilter />
+      <MentorPanel />
+      {/* Mentor Board! Existem {data?.length || 0} Mentores cadastrados no momento */}
     </>
   );
 };
