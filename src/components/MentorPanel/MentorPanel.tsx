@@ -3,23 +3,57 @@ import MentorCard from "../MentorCard/MentorCard";
 
 const MentorPanel = () => {
   return (
-    <Stack paddingLeft={20} paddingRight={20} spacing={4}>
-      <Flex flexWrap="wrap">
-        <Box
-          // key={data.id}
-          flex="0 0 calc(33.33% - 20px)"
-          m={2}
-        >
-          {/* Adjust "calc(33.33% - 20px)" to change the width of each card */}
+    <Stack
+      paddingLeft={20}
+      paddingRight={20}
+      spacing={4}
+      marginTop={4}
+      overflow="auto"
+      maxHeight="80vh"
+    >
+      <Flex flexWrap="wrap" gap={2}>
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
+          <MentorCard />
+        </Box>
+
+        <Box p={4} width="calc(25% - 10px)">
           <MentorCard />
         </Box>
       </Flex>
     </Stack>
   );
-
-  {
-    /* ; */
-  }
 };
 
 export default MentorPanel;
