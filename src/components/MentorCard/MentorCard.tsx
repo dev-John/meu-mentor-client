@@ -13,8 +13,9 @@ import {
 } from "@chakra-ui/react";
 import { FcOk } from "react-icons/fc";
 import { VscJson } from "react-icons/vsc";
+import { Mentor } from "../../Domains/Mentor";
 
-const MentorCard = () => {
+const MentorCard = ({user, stack, isAvailable}: Mentor) => {
   return (
     <>
       <Card maxW="sm" cursor="pointer">
@@ -37,14 +38,14 @@ const MentorCard = () => {
                   position="absolute"
                   right={1}
                   bottom={1}
-                  color="white"
+                  color={isAvailable ? "white" : "blue"}
                   borderRadius="full"
                 />
               </Box>
             </Tooltip>
             <Box mt={4}>
-              <Heading size="md">John Doe</Heading>
-              <Text>Analista de desenvolvimento Sr</Text>
+              <Heading size="md">{user?.name}</Heading>
+              <Text>{user?.occupation}</Text>
             </Box>
           </Flex>
         </CardBody>
@@ -63,8 +64,7 @@ const MentorCard = () => {
               strokeWidth={1}
               strokeLinecap="round"
             />
-
-            <Text>React, Node, Angular</Text>
+            <Text>{stack?.join()}</Text>
           </Flex>
         </CardFooter>
       </Card>
