@@ -29,6 +29,7 @@ const MentorPanel = () => {
             "calc(33.33% - 20px)", // 3 cards in a line
             "calc(25% - 20px)", // 4 cards in a line
           ]}
+          key={`${mentor.user.name}${mentor.user.email}`}
         >
           <MentorCard mentor={mentor}/>
         </Box>

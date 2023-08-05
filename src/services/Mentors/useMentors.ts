@@ -1,14 +1,6 @@
 import { useQuery } from "react-query";
 import { api } from "../../services";
-import { User } from "../../Domains/User";
-import { Mentee } from "../../Domains/Mentee";
-
-interface NewMentorProps {
-  user: User;
-  isAvailable: boolean;
-  stack: string[];
-  mentees?: Mentee[];
-}
+import { Mentor } from "../../Domains/Mentor";
 
 interface GetMentorsParams {
   name?: string;
@@ -34,11 +26,6 @@ export const useMentors = (param?: GetMentorsParams) => {
   return useQuery(["mentors"], getMentorsQuery);
 };
 
-export const createNewMentor = (newMentorParams: NewMentorProps) => {
+export const createNewMentor = (newMentorParams: Mentor) => {
   return api.post("/mentor", newMentorParams).then(() => console.log('Adicionou!!!'));
 };
-
-
-
-
-

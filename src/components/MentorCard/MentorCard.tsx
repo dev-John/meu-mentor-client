@@ -57,7 +57,7 @@ const MentorCard = ({mentor}: MentorCarpProps) => {
               strokeWidth={1}
               strokeLinecap="round"
             />
-            <Text>{mentor.stack.toString()}</Text>
+            <Text>{mentor.stack.join(', ')}</Text>
           </Flex>
         </CardFooter>
       </Card>
