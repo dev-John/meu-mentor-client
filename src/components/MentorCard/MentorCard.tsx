@@ -13,27 +13,32 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import { VscJson } from "react-icons/vsc";
+import { Mentor } from "../../Domains/Mentor";
 
-const MentorCard = () => {
+interface MentorCarpProps {
+  mentor: Mentor
+}
+
+const MentorCard = ({mentor}: MentorCarpProps) => {
   return (
     <>
       <Card maxW="sm" cursor="pointer">
         <CardBody maxH="27vh">
           <Flex justifyContent="space-between" pr={[0, 7]}>
-            <Tooltip label="Mentor Disponível">
+            <Tooltip label={mentor.isAvailable ? "Mentor Disponível" : "Mentor Indisponível"}>
               <Box position="relative" display="inline-block">
-                <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov">
+                <Avatar name={mentor.user.name} src="https://bit.ly/dan-abramov">
                   <AvatarBadge
                     borderColor="papayawhip"
-                    bg="green.500"
+                    bg={mentor.isAvailable ? "green.500" : "gray.300"}
                     boxSize="1em"
                   />
                 </Avatar>
               </Box>
             </Tooltip>
             <Box mt={[2, 0]} ml={[0, 6]}>
-              <Heading size="md">John Doe</Heading>
-              <Text>Analista de Desenvolvimento Sr</Text>
+              <Heading size="md">{mentor.user.name}</Heading>
+              <Text>{mentor.user.occupation}</Text>
             </Box>
           </Flex>
         </CardBody>
@@ -52,8 +57,7 @@ const MentorCard = () => {
               strokeWidth={1}
               strokeLinecap="round"
             />
-
-            <Text>React, Node, Angular</Text>
+            <Text>{mentor.stack.toString()}</Text>
           </Flex>
         </CardFooter>
       </Card>
