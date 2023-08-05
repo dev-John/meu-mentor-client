@@ -16,7 +16,6 @@ const MenuLinks = ({ isOpen }: { isOpen: boolean }) => {
       >
         <MenuItem to="/">Mentorias</MenuItem>
         <MenuItem to="/how">Sobre </MenuItem>
-        <MenuItem to="/faetures">Blog </MenuItem>
         <MenuItem to="/pricing">Login </MenuItem>
         <MenuItem to="/signup" isLast>
           <Button
