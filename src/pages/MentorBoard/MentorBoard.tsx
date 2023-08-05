@@ -6,12 +6,13 @@ import { createNewMentor } from "../../services/Mentors/useMentors";
 const MentorBoard = () => {
   const newMentor = {
     "user": {
-        "name": "Gabriel Barros",
-        "email": "gabriel_barros@mail.com"
+        "name": "Michael Kyle",
+        "email": "mc_kyle@mail.com",
+        "occupation": "Gerente de Desenvolvimento"
     },
-    "isAvailable": true,
+    "isAvailable": false,
     "stack": [
-        "C#", ".NET", "MongoDB", "SQL"
+        "Comunicação", "JS", "NodeJS"
     ]
   }
 
