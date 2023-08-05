@@ -1,4 +1,6 @@
 import {
+  Avatar,
+  AvatarBadge,
   Box,
   Card,
   CardBody,
@@ -7,11 +9,9 @@ import {
   Flex,
   Heading,
   Icon,
-  Image,
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import { FcOk } from "react-icons/fc";
 import { VscJson } from "react-icons/vsc";
 import { Mentor } from "../../Domains/Mentor";
 
@@ -24,30 +24,19 @@ const MentorCard = ({mentor}: MentorCarpProps) => {
     <>
       <Card maxW="sm" cursor="pointer">
         <CardBody maxH="27vh">
-          <Flex justifyContent="space-between">
+          <Flex justifyContent="space-between" pr={[0, 7]}>
             <Tooltip label={mentor.isAvailable ? "Mentor Disponível" : "Mentor Indisponível"}>
               <Box position="relative" display="inline-block">
-                <Image
-                  src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                  alt="Green double couch with wooden legs"
-                  height={120}
-                  width="100%"
-                  borderRadius="full"
-                  boxSize={20}
-                />
-                <Icon
-                  as={FcOk}
-                  boxSize={7}
-                  marginLeft={2}
-                  position="absolute"
-                  right={1}
-                  bottom={1}
-                  color="white"
-                  borderRadius="full"
-                />
+                <Avatar name={mentor.user.name} src="https://bit.ly/dan-abramov">
+                  <AvatarBadge
+                    borderColor="papayawhip"
+                    bg={mentor.isAvailable ? "green.500" : "gray.300"}
+                    boxSize="1em"
+                  />
+                </Avatar>
               </Box>
             </Tooltip>
-            <Box mt={4}>
+            <Box mt={[2, 0]} ml={[0, 6]}>
               <Heading size="md">{mentor.user.name}</Heading>
               <Text>{mentor.user.occupation}</Text>
             </Box>
