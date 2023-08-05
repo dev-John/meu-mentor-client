@@ -1,26 +1,27 @@
+import { Button } from "@chakra-ui/react";
 import MentorFilter from "../../components/MentorFilter/MentorFilter";
 import MentorPanel from "../../components/MentorPanel/MentorPanel";
-import { useMentors, createNewMentor } from "../../services/Mentors/useMentors";
+import { createNewMentor } from "../../services/Mentors/useMentors";
 
 const MentorBoard = () => {
-  const { data } = useMentors();
   const newMentor = {
     "user": {
-        "name": "Jonatas Oliveira da Silva",
-        "email": "jolivsilva@mail.com",
-        "occupation": "Analista de Sistemas"
+        "name": "Michael Kyle",
+        "email": "mc_kyle@mail.com",
+        "occupation": "Gerente de Desenvolvimento"
     },
-    "isAvailable": true,
+    "isAvailable": false,
     "stack": [
-        "ReactJS, NodeJS, NextJS, MongoDB, C#"
+        "Comunicação", "JS", "NodeJS"
     ]
   }
+
   return (
     <>
-     <MentorFilter />
-    <MentorPanel mentorsList={data} />
-    <br/>
-    <button type="submit" onClick={() => createNewMentor(newMentor)} style={{backgroundColor: "purple", color: "white"}}>Adding new mentor</button>
+      <MentorFilter />
+      <MentorPanel />
+      <br/>
+      <Button type="submit" onClick={() => createNewMentor(newMentor)}>Adding new mentor</Button>
     </>
   );
 };
