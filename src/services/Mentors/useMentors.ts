@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import { api } from "../../services";
 import { Mentor } from "../../Domains/Mentor";
+import { api } from "../../services";
 
 interface GetMentorsParams {
   name?: string;
@@ -10,9 +10,8 @@ interface GetMentorsParams {
 const getMentors = (param?: GetMentorsParams) => {
   if (!param) {
     return api.get("/mentor").then((res) => res.data);
-
   }
-  return api.get("/mentor", {params: param}).then((res) => res.data);
+  return api.get("/mentor", { params: param }).then((res) => res.data);
 };
 
 export const useMentors = (param?: GetMentorsParams) => {
@@ -27,5 +26,7 @@ export const useMentors = (param?: GetMentorsParams) => {
 };
 
 export const createNewMentor = (newMentorParams: Mentor) => {
-  return api.post("/mentor", newMentorParams).then(() => console.log('Adicionou!!!'));
+  return api
+    .post("/mentor", newMentorParams)
+    .then(() => console.log("Adicionou!!!"));
 };
